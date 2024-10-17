@@ -1,0 +1,185 @@
+car {
+    display: block;
+    border: 2px solid #c8c8c8;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    width: 100%;
+    border-bottom: 2px solid #d9534f;
+    border-top: 2px solid #d9534f;
+    border-left: 2px solid #d9534f;
+    border-right: 2px solid #d9534f;
+}
+
+manufacturer_brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d9534f;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+extra_car_info::before {
+    content: attr(model); 
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px; 
+}
+
+extra_car_info::after {
+    content:  attr(mini_model_description); 
+    font-weight: normal;
+    font-size: 16px;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+extra_car_info::after {
+    content: "  "attr(mini_model_description)" , Χρώμα: " attr(color) ""; 
+    font-weight: normal;
+    font-size: 16px;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+main_characteristics {
+    display: flex;
+    flex-direction: column;
+}
+
+main_characteristics > Engine::before {
+    content: "Κινητήρας: ";
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+main_characteristics > CO2_emissions::before {
+    content: "Εκπομπές CO2: ";
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+main_characteristics > Fuel_consumption::before {
+    content: "Κατανάλωση Καυσίμου: ";
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+economic_info_leasing::before {
+    content: "Οικονομικά:";
+    font-weight: bold;
+    text-decoration: underline;
+    color: #d9534f;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+economic_info_leasing {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+monthly_leasing, payment_in_advance, retail_price, Retail_price_before_taxes {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 20px; 
+    margin-bottom: 10px;
+}
+
+monthly_leasing::before {
+    content: "Μηνιαίο μίσθωμα: ";
+    font-weight: bold;
+}
+
+monthly_leasing:nth-of-type(2)::after {
+    content: " (με ΦΠΑ 24%)";
+    font-weight: normal;
+    margin-left: 5px;
+    color: #333;
+}
+
+payment_in_advance::before {
+    content: "Προκαταβολή: ";
+    font-weight: bold;
+}
+
+payment_in_advance > amount:first-of-type::after {
+    content: " (χωρίς ΦΠΑ)";
+    font-weight: normal;
+    margin-left: 5px;
+    color: #333;
+}
+
+payment_in_advance > amount:last-of-type::after {
+    content: " (με ΦΠΑ 24%)";
+    font-weight: normal;
+    margin-left: 5px;
+    color: #333;
+}
+
+retail_price::before {
+    content: "Λιανική τιμή: ";
+    font-weight: bold;
+}
+
+Retail_price_before_taxes::before {
+    content: "Λιανική τιμή προ φόρων: ";
+    font-weight: bold;
+}
+
+detail_econ_info::before {
+    content: "Σχόλια: ";
+    font-weight: bold;
+}
+
+equipment::before {
+    content: "Στοιχεία Βασικού Εξοπλισμού:";
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+equip {
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+executive_equip::before {
+    content: "Στοιχεία Executive Εξοπλισμού:";
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+exec_equip {
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+offer_include::before {
+    content: "Η προσφορά περιλαμβάνει:";
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+include {
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 16px;
+}

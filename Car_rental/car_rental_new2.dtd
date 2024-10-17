@@ -1,0 +1,56 @@
+<!ELEMENT cars_to_rent (car*)>
+<!ELEMENT car (manufacturer_brand, extra_car_info, main_characteristics, pollution_level?, rental_availability, economic_info_leasing, equipment, offer_include, votes)>
+<!ATTLIST car no ID #REQUIRED>
+
+<!ELEMENT manufacturer_brand (#PCDATA)>
+<!ELEMENT extra_car_info EMPTY>
+<!ATTLIST extra_car_info color CDATA #REQUIRED>
+<!ATTLIST extra_car_info model CDATA #REQUIRED>
+<!ATTLIST extra_car_info mini_model_description CDATA #IMPLIED>
+
+<!ELEMENT main_characteristics (Engine, CO2_emissions, Fuel_consumption)>
+<!ELEMENT Engine (#PCDATA)>
+<!ELEMENT CO2_emissions (#PCDATA)>
+<!ATTLIST CO2_emissions em_unit CDATA #FIXED "grCO2/km">
+<!ELEMENT Fuel_consumption (#PCDATA)>
+<!ATTLIST Fuel_consumption unit_fuel CDATA #FIXED "lt/100km">
+
+<!ELEMENT pollution_level (#PCDATA)> <!-- Προαιρετικό στοιχείο pollution_level -->
+<!ELEMENT rental_availability EMPTY> <!-- Υποχρεωτικό στοιχείο rental_availability -->
+<!ATTLIST rental_availability type (companies | individuals | both) #REQUIRED>
+
+<!ELEMENT economic_info_leasing (monthly_leasing+, payment_in_advance, retail_price, Retail_price_before_taxes, detail_econ_info)>
+<!ELEMENT monthly_leasing (#PCDATA)>
+<!ATTLIST monthly_leasing leasing_unit CDATA #FIXED "euro">
+<!ATTLIST monthly_leasing without_tax (true | false) #REQUIRED>
+<!ATTLIST monthly_leasing tax CDATA #IMPLIED>
+
+<!ELEMENT payment_in_advance (amount+, descr?)>
+<!ELEMENT amount (#PCDATA)>
+<!ATTLIST amount payment_unit CDATA #FIXED "euro">
+<!ATTLIST amount without_tax (true | false) #REQUIRED>
+<!ATTLIST amount tax CDATA #IMPLIED>
+<!ELEMENT descr (#PCDATA)>
+
+<!ELEMENT retail_price (#PCDATA)>
+<!ATTLIST retail_price retail_unit CDATA #FIXED "euro">
+<!ELEMENT Retail_price_before_taxes (#PCDATA)>
+<!ATTLIST Retail_price_before_taxes retail_bef_tax_unit CDATA #FIXED "euro">
+<!ELEMENT detail_econ_info (#PCDATA)>
+
+<!ELEMENT equipment (basic_equipment, executive_equip?)>
+<!ELEMENT basic_equipment (equip+)>
+<!ELEMENT executive_equip (exec_equip+)>
+<!ELEMENT equip (#PCDATA)>
+<!ATTLIST equip id ID #REQUIRED>
+<!ELEMENT exec_equip (#PCDATA)>
+<!ATTLIST exec_equip id ID #REQUIRED>
+
+<!ELEMENT offer_include (include*)>
+<!ELEMENT include (#PCDATA)>
+
+<!ELEMENT votes (vote*)> <!-- Υποχρεωτικό στοιχείο votes -->
+<!ELEMENT vote (username, stars, comment?)> <!-- Υποχρεωτικό στοιχείο vote -->
+<!ELEMENT username (#PCDATA)>
+<!ELEMENT stars (#PCDATA)>
+<!ELEMENT comment (#PCDATA)>
