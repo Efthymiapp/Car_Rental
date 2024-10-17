@@ -1,5 +1,5 @@
 # About this project
-Contains some greek content as it was an assignment for my University of Pireaus, I had to make an XML file (car_rental.xml), in which you will be able to store information about the following cars available for rent to companies or individuals from a long-term car leasing business and which you will find in the following file: dedomena_ergasias_examinoy_2024_xml.xls
+Contains some greek content as it was an assignment for my University of Piraeus, I had to make an XML file (car_rental.xml), in which you will be able to store information about the following cars available for rent to companies or individuals from a long-term car leasing business and which you will find in the following file: dedomena_ergasias_examinoy_2024_xml.xls
 
 # 1
 There is an XML file **car_rental.xml** that contains data about cars available for long-term leasing by a company. In addition, a DTD **car_rental.dtd** that defines the rules that the XML file must conform to in order to ensure the correct structure and validity of the data.
