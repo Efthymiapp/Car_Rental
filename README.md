@@ -2,10 +2,10 @@
 There is an XML file **car_rental.xml** that contains data about cars available for long-term leasing by a company. In addition, a DTD **car_rental.dtd** that defines the rules that the XML file must conform to in order to ensure the correct structure and validity of the data.
 
 # 2
-The new **car_rental_new.xml** and **car_rental_new.dtd** files convert the XML file and the corresponding DTD so that the 'mini_model_description' element is an optional property and the 'Color' element is a required property into a new empty element named 'extra_car_info', which it will be in every car.
+The new **car_rental_new_with_dtd.xml** and **car_rental_new.dtd** files convert the XML file and the corresponding DTD so that the 'mini_model_description' element is an optional property and the 'Color' element is a required property into a new empty element named 'extra_car_info', which it will be in every car.
 
 # 3
-Conversion of the DTD file (car_rental_new.dtd) to the corresponding XML Schema **car_rental_new.xsd**.
+Conversion of the DTD file (car_rental_new.dtd) to the corresponding XML Schema **car_rental_new.xsd** and **car_rental_with_xsd.xml**
 
 # 4
 Suppose we want to include in our data description (car_rental_new.xml file) for each available car for rent the following information: 
@@ -18,7 +18,11 @@ Suppose we want to include in our data description (car_rental_new.xml file) for
 The new files is named **car_rental_new2.xml** and **car_rental_new2.dtd**
 
 # 5
-Creation of a CSS file to display the data of the XML document (car_rental_new.xml) as **car_rental_styles.css**
+Creation of a CSS file to display the data of the XML document (car_rental_new.xml) as **car_rental_styles.css** .
+We insert the command ?xml-stylesheet type="text/css" href="car_rental_styles.css"?
+
+![image](https://github.com/user-attachments/assets/c296ff96-2532-4182-a376-3f94abb17d1e)
+
 
 # 6
 Creation of different XSL files to display the data of the XML document (car_rental_new.xml) in the following ways:
